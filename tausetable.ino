@@ -10,7 +10,7 @@ const int buttonPin[] = {3, 4, 5, 2};  // the number of the pushbutton pins
 
 // variables will change:
 int buttonState = 0;         // variable for reading the pushbutton status
-int oneCount = 0;
+
 int twoCount = 0;
 int threeCount = 0;
 int fourCount = 0;
@@ -18,7 +18,7 @@ int currentCount = 0;
 int currentButton = 0;
 
 
-const CRGB oneColor[] = {CRGB::Red, CRGB::Blue, CRGB::Green, CRGB::Purple, CRGB::White};
+
 const CRGB twoColorOne[] = {CRGB::Red, CRGB::Blue, CRGB::Purple, CRGB::Blue, CRGB::Red, CRGB::Green};
 const CRGB twoColorTwo[] = {CRGB::Blue, CRGB::Red, CRGB::Blue, CRGB::Purple, CRGB::Green, CRGB::Red};
 const CRGB threeColorOne[] = {CRGB::Red, CRGB::Blue, CRGB::Purple,  CRGB::Red, CRGB::Purple};
@@ -52,18 +52,7 @@ void loop() {
     // if it is, the buttonState is LOW:
     if (buttonState == LOW && buttonPin[x] == 3) {
 
-      if (currentCount > 15000) {
-        singleColor(oneColor[oneCount]);
-        oneCount = (oneCount + 1) % 5;
-        currentCount = 0;
-      }
-      else if (currentButton != 1) {
-        currentCount = 0;
-        currentButton = 1;
-      }
-      else {
-        currentCount += 1;
-      }
+      singleColor(CRGB::Black);
     }
     if (buttonState == LOW && buttonPin[x] == 4) {
 
