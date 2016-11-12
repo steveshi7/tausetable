@@ -6,28 +6,27 @@
 CRGB leds1[NUM_LEDS];
 CRGB leds2[NUM_LEDS];
 
-const int buttonPin[] = {3, 4, 5, 2};  // the number of the pushbutton pins
+const int buttonPin[] = {3, 4, 5, 2};  
+// the number of the pushbutton pins
 
-// variables will change:
-int buttonState = 0;         // variable for reading the pushbutton status
+// variable for reading the pushbutton status
+int buttonState = 0;         
 
+// counts of buttons pressed (for cycling through states)
 int twoCount = 0;
 int threeCount = 0;
 int fourCount = 0;
 int currentCount = 0;
 int currentButton = 0;
 
-
-
-const CRGB twoColorOne[] = {CRGB::Red, CRGB::Blue, CRGB::Purple, CRGB::Blue, CRGB::Red, CRGB::Green};
-const CRGB twoColorTwo[] = {CRGB::Blue, CRGB::Red, CRGB::Blue, CRGB::Purple, CRGB::Green, CRGB::Red};
-const CRGB threeColorOne[] = {CRGB::Red, CRGB::Blue, CRGB::Purple,  CRGB::Red, CRGB::Purple};
-const CRGB threeColorTwo[] = {CRGB::Blue, CRGB::Green, CRGB::Blue, CRGB::Green, CRGB::Red};
+const CRGB twoColorOne[] = {CRGB::Red, CRGB::Purple, CRGB::Red, CRGB::Purple, CRGB::Green};
+const CRGB twoColorTwo[] = {CRGB::Blue, CRGB::Blue, CRGB::Green, CRGB::Red, CRGB::Blue};
+const CRGB threeColorOne[] = {CRGB::Red, CRGB::Purple, CRGB::Red, CRGB::Purple, CRGB::Green};
+const CRGB threeColorTwo[] = {CRGB::Blue, CRGB::Blue, CRGB::Green, CRGB::Red, CRGB::Blue};
 
 
 void setup() {
   Serial.begin(9600);
-
 
   FastLED.addLeds<NEOPIXEL, DATA_PIN1>(leds1, NUM_LEDS);
   FastLED.addLeds<NEOPIXEL, DATA_PIN2>(leds2, NUM_LEDS);
